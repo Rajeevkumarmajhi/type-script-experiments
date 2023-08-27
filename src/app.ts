@@ -17,12 +17,16 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
 
+    let values : [ string, string, number ];
+
+    values = [ tofrom.value, details.value,amount.valueAsNumber ];
+
     let doc: HasFormatter;
 
     if(type.value === "invoice"){
-        doc = new Invoice(tofrom.value, details.value,amount.valueAsNumber);
+        doc = new Invoice(...values);
     }else{
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
 
     list.render(doc, type.value , 'end');
@@ -76,3 +80,7 @@ tup[1] = 45;
 tup[2] = false;
 
 // Above code only allows string in index 0 , number in index 1 and boolean in index 3
+
+let student : [ string , number ];
+student = [ "Rajeev", 9800930444 ];
+
