@@ -63,3 +63,16 @@ const docFour : Resource <string[] > = {
 
 // Tuples
 
+let arr = [ 'ryu',25, true];
+arr[0] = true;
+arr[1] = 'hari';
+arr[2] = false;
+
+// Above code is just array with 3 diffrent types of data and can be enterchanged
+
+let tup : [ string, number, boolean ] = ['ryu', 25, true];
+tup[0] = 'ken';
+tup[1] = 45;
+tup[2] = false;
+
+// Above code only allows string in index 0 , number in index 1 and boolean in index 3
